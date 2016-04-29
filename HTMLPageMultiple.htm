@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div data-ng-app="app1">
+    <div data-ng-controller="Ctrl1">
+    First Name: <input type="text" data-ng-model="firstName"><br>
+     Last Name: <input type="text" data-ng-model="lastName"><br>
+    <br>
+     Full Name: {{firstName + " " + lastName}}
+    </div>
+</div>
+
+<div id="app2">
+    <div data-ng-controller="Ctrl2">
+    <ul>
+       <li data-ng-repeat="x in names">
+         {{ x.firstname + ', ' + x.lastName }}
+      </li>
+    </ul>
+    </div>
+</div>
+
+<!--<script>
+    var app = angular.module('myApp', []);
+    app.controller('personCtrl', function ($scope) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+        $scope.fullName = function () {
+            return $scope.firstName + " " + $scope.lastName;
+        };
+    });
+</script> -->
+
+<script src="js/pc.js"></script> 
+<script src="js/name.js"></script> 
+
+</body>
+</html>
