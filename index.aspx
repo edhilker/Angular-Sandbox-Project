@@ -1,11 +1,14 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="ui_router_test_index" %>
 
-<html data-ng-app="myapp" xmlns="http://www.w3.org/1999/xhtml">
-<head>
- <title>AngularJS: UI-Router Quick Start</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AngularJS: UI-Router Quick Start</title>
     <!-- Bootstrap CSS -->
     <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="container">
   <p><i>Best viewed in pop-out mode to see location changes. Click blue button on the right.</i></p>
 
@@ -36,16 +39,16 @@
       myapp.config(function ($stateProvider, $urlRouterProvider) {
 
           // For any unmatched url, send to /route1
-          $urlRouterProvider.otherwise("/student/ui_router_test/route1")
+          $urlRouterProvider.otherwise("/route1")
 
           $stateProvider
         .state('route1', {
-            url: "/student/ui_router_test/route1",
+            url: "/route1",
             templateUrl: "route1.html"
         })
           .state('route1.list', {
               url: "/list",
-              templateUrl: "/student/ui_router_test/route1.list.html",
+              templateUrl: "route1.list.html",
               controller: function ($scope) {
                   $scope.items = ["A", "List", "Of", "Items"];
               }
@@ -66,4 +69,5 @@
   </script>
 
 </body>
+
 </html>

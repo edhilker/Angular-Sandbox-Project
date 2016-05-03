@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+<div data-ng-controller="myAppController">
+  Hi. HomeView.html here. Please enter user's first and last name.<br>
+  I've provided an initial first name for you.
+  <br>
+  <br>
+  User first name: <input data-ng-model="user.firstName"><br>
+  User last name: <input data-ng-model="user.lastName"><br>
+  <br>
+  <div>
+  <span data-ng-show="user.firstName.length || user.lastName.length">
+    Ok, so far I have:<br>
+  </span>
+  First name: {{user.firstName}}<br>
+  Last name: {{user.lastName}}<br>
+  </div>
+</div>
+
+</body>
+</html>
