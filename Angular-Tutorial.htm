@@ -1,0 +1,48 @@
+﻿
+<html data-ng-app="phonecatApp" >  <!--ng-strict-di-->
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>My HTML File</title>
+     <script src="Scripts/angular.js" type="text/javascript"></script>
+     <script src="js/app.spec.js" type="text/javascript"></script>
+    <script src="js/phone-app.js" type="text/javascript"></script> <!--must have </script> not just />-->
+    <script src="js/e2e-test-scenarios.js" type="text/javascript"></script>
+    <script src="js/phone-list-comp.js" type="text/javascript"></script>
+  </head>
+
+  <body data-ng-controller="PhoneListController">
+  <ul>
+    <li data-ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+    </li>
+  </ul>
+  <p>Total number of phones: {{phones.length}}</p>
+
+  <p>Hello, {{name}}!</p>
+
+  <table>
+  <tr><th>Row number</th></tr>
+  <tr data-ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i}}</td></tr>
+  </table>
+
+    <!--<p>Nothing here {{'yet' + '!'}}</p>
+    <ul>
+  <li>
+    <span>Nexus S</span>
+    <p>
+      Fast just got faster with Nexus S.
+    </p>
+  </li>
+  <li>
+    <span>Motorola XOOM™ with Wi-Fi</span>
+    <p>
+      The Next, Next Generation tablet.
+    </p>
+  </li>
+</ul>
+<p>Total number of phones: 2</p>-->
+
+  </body>
+</html>

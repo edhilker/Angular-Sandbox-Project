@@ -1,0 +1,33 @@
+<body ng-app='app'>
+    <div ng-controller='ctrl as vm'>
+        <input type="textbox" on-enter="vm.enterSuperpower()" />
+    </div>
+</body>
+
+<script type="javascript">
+    angular.module('app', [])
+        .controller('ctrl', function(){
+            var vm = this;
+            vm.enterSuperpower = function(){
+                alert('You pressed enter!');
+            };
+        });
+</script>
+
+<script type="javascript">
+    angular.module('app')
+        .directive('onEnter', function(){
+            return{
+                link: function(scope, element, attrs){
+                    element.bind('keypress', function(e){
+                        if(e.which === 13){
+                            scope.$apply(function(){
+                                scope.$eval(attrs.onEnter);
+                            });
+                            e.preventDefault();
+                        }
+                    });
+                }
+            }
+        });
+</script>

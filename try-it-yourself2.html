@@ -1,0 +1,22 @@
+<body ng-app="app">
+    <blink>Hi guys!</blink>
+</body>
+
+<script type="javascript">
+    angular.module('app')
+        .directive('blink', function($interval){
+            return{
+                restrict: 'E',
+                transclude: true,
+                link: function(scope, element, attrs){
+                    $interval(function(){
+                        var visibilityState = element.css('visibility') === 'hidden' ?
+                                                                            'visible' :
+                                                                            'hidden';
+                        element.css('visibility', visibilityState);
+                    }, 500); }
+                ,
+                template: '<span ng-transclude></span>'
+            };
+        });
+</script>
